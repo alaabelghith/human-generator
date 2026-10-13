@@ -1,0 +1,8 @@
+.venv*/
+cache/
+*.log
+__pycache__/
+*.pyc
+# Houdini
+backup/
+*.hip.bak
