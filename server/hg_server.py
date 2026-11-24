@@ -34,6 +34,10 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from threading import Lock
 
+# Kimodo + its Llama 3 text encoder live in <repo>/cache/hf (moved from D:\ai_models\hf_cache, 11 Nov).
+# Set before torch/transformers import so huggingface_hub reads it. Override with HG_HF_HOME.
+os.environ["HF_HOME"] = os.environ.get("HG_HF_HOME", str(Path(__file__).resolve().parent.parent / "cache" / "hf"))
+
 import numpy as np
 import torch
 
